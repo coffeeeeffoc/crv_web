@@ -1,0 +1,21 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "composite": true,
+    "downlevelIteration": true,
+    "experimentalDecorators": true
+    // "noEmit": false, // 为true则无法在执行tsc时生成文件，故设为false
+    // "outDir": "dist",
+    // "rootDir": "src",
+    // "sourceRoot": "@crv/rc/src",
+    // "declaration": true,
+    // "baseUrl": ".",
+    // // "declarationDir": "types",
+  },
+  "include": [
+    "./src",
+    "../utils/src",
+    // "dist/**/*",
+    // "types/**/*"
+  ]
+}

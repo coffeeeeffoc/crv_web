@@ -1,0 +1,70 @@
+.autoHeight {
+  display: flex;
+  flex-direction: column;
+}
+.flexOverflowHidden {
+  flex: auto;
+  overflow: hidden;
+}
+.auto {
+  .autoHeight();
+  .flexOverflowHidden();
+}
+.rowHeight {
+  height: 400px;
+}
+.buttonStyle {
+  height: 400px;
+  text-align: center;
+}
+
+.sourceTable {
+  :global {
+    .ant-spin-nested-loading {
+      .auto();
+      &>.ant-spin-container {
+        .auto();
+        &>.ant-table {
+          .auto();
+          &>.ant-table-container {
+            .auto();
+            border-left-width: 0;
+            &>.ant-table-header {
+              overflow: visible !important;
+            }
+            &>.ant-table-body {
+              
+              flex: auto;
+              overflow-y: auto !important;
+            }
+          }
+        }
+      }
+    }
+    .ant-empty-normal {
+      margin: 149.6px 0 !important;
+      // border-bottom-width: 0 !important;
+    }
+    .ant-table {
+      height: 400px;
+      tr {
+        height: 30px;
+        th,td {
+          height: 24px;
+          &{
+            padding: 0px 0px !important;
+          }
+        }
+      }
+    }
+    .ant-table-container {
+      border-left-width: 0 !important;
+      border-right-width: -1 !important;
+      border-top-width: 0 !important;
+    }
+  }
+}
+
+.onRowClick {
+  background-color: rgba(0, 0, 0, 0.05);
+}

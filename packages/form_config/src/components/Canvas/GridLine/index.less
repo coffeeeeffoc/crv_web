@@ -1,0 +1,52 @@
+.gridLine {
+  position: relative;
+  touch-action: none;
+  pointer-events: none;
+
+  &>.lineNumber {
+    position: absolute;
+    font-size: 10px;
+    width: 14px;
+    border-radius: 3px;
+    color: var(--color-gray);
+    background: var(--color-white);
+    line-height: 15px;
+    text-align: center;
+  }
+  &:global(.row.firstImplicit)>.lineNumber {
+    border-top-right-radius: 0px;
+    bottom: auto;
+    top: 1px;
+  }
+  &:global(.row.lastImplicit)>.lineNumber {
+    border-bottom-right-radius: 0px;
+    bottom: 1px;
+  }
+  &:global(.row)>.lineNumber {
+    width: 15px;
+    text-align: left;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 0;
+    padding-left: 4px;
+    left: 1px;
+  }
+  &:global(.col.firstImplicit)>.lineNumber {
+    border-bottom-left-radius: 0px;
+    right: auto;
+    left: 1px;
+  }
+  &:global(.col.lastImplicit)>.lineNumber {
+    border-bottom-right-radius: 0px;
+    right: 1px;
+  }
+  &:global(.col)>.lineNumber {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 16px;
+    top: 1px;
+  }
+}

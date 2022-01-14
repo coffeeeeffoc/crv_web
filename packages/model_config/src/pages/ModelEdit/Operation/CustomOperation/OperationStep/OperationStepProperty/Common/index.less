@@ -1,0 +1,86 @@
+@import '@/styles/flex';
+.btn{
+	position:absolute;
+	top: 5px;
+}
+.formulaModal {
+	top: 10vh;
+	:global{
+		.ant-tabs-card.ant-tabs-small > .ant-tabs-nav .ant-tabs-tab {
+			padding: 1px 16px;
+		}
+		.ant-modal-header {
+			padding: 5px 10px;
+		}
+
+    .ant-modal-body {
+      padding: 0 !important;
+      height:'70vh'
+      // font-size: 14px;
+      // line-height: 1.5715;
+      // word-wrap: break-word;
+  }
+		// .ant-modal-footer {
+		// 	padding:0
+		// }
+		.ant-modal-content{
+			.ant-modal-footer {
+				.cancelBtn {
+					.btn();
+					right: 100px;
+				}
+				.okBtn {
+					.btn();
+					right: 20px;
+				}
+			}	
+		}
+	}
+}
+.table {
+  :global {
+    .ant-spin-nested-loading {
+    .auto();
+    &>.ant-spin-container {
+      .auto();
+      &>.ant-table {
+        .auto();
+        &>.ant-table-container {
+          .auto();
+          &>.ant-table-header {
+            overflow: visible !important;
+          }
+          &>.ant-table-body {
+            flex: auto;
+            overflow-y: auto !important;
+          }
+        }
+      }
+    }
+  }
+  .ant-table-tbody > tr.ant-table-row:hover > td {
+    background: #b7d9f5 !important;
+  }
+    .ant-table {
+      max-height: 50vh;
+      tr {
+        height: 20px;
+        th,td {
+          height: 24px;
+          &{
+            padding: 0px 5px !important;
+          }
+        }
+      }
+    }
+    .ant-table-footer {
+      height: 24px;
+      padding: 0px !important;
+    }
+  }
+  // color: red;
+  .onRowClick {
+    // background-color: red;
+    background-color: #6cb8f7;;
+  }
+}

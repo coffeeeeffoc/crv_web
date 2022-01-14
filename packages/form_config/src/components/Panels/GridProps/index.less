@@ -1,0 +1,39 @@
+@import '@rc/styles/basic/flex';
+
+.gridProps {
+  .autoHeight();
+  box-sizing: border-box;
+  // max-height: calc(100vh - 84px);
+  height: calc(100vh - 84px);
+  &>.tree {
+    max-height: 200px;
+    flex: none;
+    // height: 200px;
+    :global {
+      .ant-tree-indent-unit {
+        width: 15px;
+      }
+      .ant-tree-switcher {
+        width: 15px;
+      }
+    }
+  }
+  &>.props {
+    .auto();
+    &>:global(.ant-collapse-header) {
+      flex: none;
+    }
+    &>:global(.ant-collapse-content) {
+      .flexOverflowHidden();
+      overflow-y: auto;
+    }
+    &>:global(.ant-collapse-content) {
+      .flexOverflowHidden();
+      overflow-y: overlay;
+      &::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+    }
+  }
+}

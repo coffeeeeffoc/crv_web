@@ -1,0 +1,105 @@
+@import '@crv/rc/src/styles/basic/flex';
+
+.table {
+  pointer-events: all;
+  .auto();
+  :global {
+    .ant-spin-nested-loading {
+      .auto();
+      &>.ant-spin-container {
+        .auto();
+        &>.ant-table {
+          .auto();
+          &>.ant-table-container {
+            .auto();
+            border-left-width: 0;
+            // 会导致横向滚动时头部不跟随滚动，故先注释掉
+            // &>.ant-table-header {
+            //   overflow: visible !important;
+            // }
+            &>.ant-table-body {
+              flex: auto;
+              overflow-y: auto !important;
+            }
+            table {
+              border-left: 1px solid #f0f0f0;
+            }
+          }
+        }
+      }
+    }
+    .ant-table {
+      tr:not(.ant-table-measure-row) {
+        height: 20px;
+        th, td {
+          user-select: none;
+          height: 35px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          &:not(.editable) {
+            padding: 1px 5px !important;
+          }
+          &.editable {
+            .ant-form-item-control-input-content {
+              width: 100%;
+              height: 100%;
+            }
+            &:not(.editing) .wholeCell {
+              line-height: 31px;
+            }
+
+            &.editing {
+              padding: 0 !important;
+              .wholeCell {
+                &.ant-input {
+                  height: 32px;
+                }
+              }
+              .ant-form-item-control-input {
+                min-height: 20px;
+                .ant-input {
+                  padding: 4px 4px !important;
+                }
+                .ant-select-multiple {
+                  .ant-select-selector {
+                    .ant-select-selection-item {
+                      padding-inline-start: 4px;
+                    }
+                    .ant-select-selection-search {
+                      left: 0 !important;
+                      margin-inline-start: 0px;
+                      height: 18px;
+                      line-height: 18px;
+                    }
+                  }
+                }
+                .ant-select-single .ant-select-selector .ant-select-selection-search {
+                  left: 4px;
+                  line-height: 32px;
+                }
+                .ant-select-selector {
+                  padding: 0px 4px !important;
+                  height: unset;
+                  .ant-select-selection-search-input {
+                    height: unset;
+                  }
+                }
+              }
+            }
+            &:not(.editing) {
+              padding: 1px 5px !important;
+              .wholeCell {
+                width: 100%;
+                height: 100%;
+              }
+            }
+          }
+        }
+        &.ant-table-placeholder>td>.ant-empty {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

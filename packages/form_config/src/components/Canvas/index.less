@@ -1,0 +1,16 @@
+@selected-outline-color: #1890FF;
+
+.targetSelected() {
+  outline-color: @selected-outline-color !important;
+}
+.canvas {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: auto;
+
+  :global(.selected:not(:hover)) {
+    .targetSelected();
+  }
+}

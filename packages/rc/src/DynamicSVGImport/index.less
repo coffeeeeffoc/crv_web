@@ -1,0 +1,18 @@
+@-webkit-keyframes loadingCircle {
+  to {
+      transform: rotate(360deg)
+  }
+}
+
+@keyframes loadingCircle {
+  to {
+      transform: rotate(360deg)
+  }
+}
+.loading {
+  -webkit-animation: loadingCircle 1s infinite linear;
+  animation: loadingCircle 1s infinite linear;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}

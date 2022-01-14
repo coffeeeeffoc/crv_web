@@ -1,0 +1,42 @@
+.gridSection {
+  position: relative;
+  background: var(--color-purple-dark);
+  &:after,
+  &:before {
+    background: var(--color-purple-dark);
+    color: var(--color-white);
+  }
+  &:global(.grid-saved),
+  &:global(.grid-add) {
+    background: var(--color-white);
+  }
+  &:global(.grayed) {
+    background: var(--color-green-dark);
+  }
+  touch-action: none;
+  pointer-events: initial;
+  height: 100%;
+  position: relative;
+  &:not(:global(.dragging)) {
+    cursor: pointer;
+  }
+  &:not(:global(.dragging)):hover {
+    background: var(--color-green-hover) !important;
+  }
+  &:global(.focused) {
+    background: var(--color-green-hover) !important;
+  }
+  &:global(.implicit) {
+    background: transparent !important;
+    &:hover {
+      background: rgba(var(--color-white-rgb), 0.5) !important;
+    }
+  }
+  &>div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}

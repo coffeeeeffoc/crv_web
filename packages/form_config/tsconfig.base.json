@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig",
+  "compilerOptions": {
+    "composite": true,
+    "downlevelIteration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@@/*": ["src/components/*"],
+      "@rc/*": ["../rc/src/*"],
+      "@utils/*": ["../utils/src/*"],
+    }
+  },
+}

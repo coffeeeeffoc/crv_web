@@ -1,0 +1,16 @@
+{
+  "name": "@crv/utils",
+  "version": "1.0.0",
+  "types": "./src/utils.d.ts",
+  "license": "MIT",
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
+    "axios": "^0.21.1"
+  },
+  "scripts": {
+    "publish": "xxx"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

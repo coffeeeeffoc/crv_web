@@ -1,0 +1,59 @@
+@import '@rc/styles/basic/ellipsis';
+
+.optionIcon {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  margin-right: 5px;
+}
+.groups {
+  :global {
+    .ant-collapse-content-box {
+      display: grid;
+      grid-template-columns: [heading row-start] auto [value] auto [unit row] auto;
+      grid-template-columns: [heading row-start] 120px [value] auto [unit row] 110px;
+      grid-auto-rows: 32px;
+      &>* {
+        justify-items: stretch;
+        align-items: center;
+      }
+      label {
+        grid-column: heading / heading;
+        padding-right: 8px;
+        .ellipsis();
+        &:global(.minMax) {
+          justify-self: end;
+        }
+        &>img {
+          .optionIcon
+        }
+      }
+      &>:global(.value) {
+        grid-column: value / value;
+      }
+      &>:global(.unit) {
+        grid-column: unit / unit;
+        &:global(.noValue) {
+          grid-column: value / -1;
+        }
+      }
+      :global {
+        .ant-input-number,
+        .ant-select {
+          // height: 28px;
+          width: 100%;
+        }
+        .ant-select {
+          &>.ant-select-selector {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+.svg {
+  fill: black;
+  stroke: black;
+  stroke-width: 6px;
+}

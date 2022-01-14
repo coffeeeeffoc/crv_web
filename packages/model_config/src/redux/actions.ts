@@ -1,0 +1,7 @@
+export { actions as operationActions } from './slices/operation'
+export { actions as modelListActions } from './slices/modelList'
+export { actions as modelEditActions } from './slices/modelEdit'
+export { actions as fieldActions } from './slices/field'
+export { actions as viewActions } from './slices/view'
+export { actions as operationUrlActions } from './slices/operationUrl'
+export { actions as formConfigActions } from './slices/formConfig'

@@ -1,0 +1,50 @@
+.numberRange{
+  display: inline-block !important;
+  :global{
+    .range-left,.range-right{
+      width: calc(50% - 5px) !important;
+    }
+  }
+}
+
+.refFieldValueSelect{
+  :global{
+    .ant-select-selector{
+      // top: 1px;
+    }
+  }
+}
+
+.refFields {
+  :global{
+    // ul{
+    //   background-color: red;
+    // }
+    // ul::-webkit-scrollbar{
+    //   width: 6px;
+    //   height: 10px;
+    //   background-color: gray;
+    // }
+    /*修改滚动条样式*/
+    ul::-webkit-scrollbar {
+      width: 4px;
+      height: 10px;
+      /**/
+    }
+    ul::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 2px;
+    }
+    ul::-webkit-scrollbar-thumb {
+      // background: #bfbfbf;
+      background: #8ac3e9;
+      border-radius: 10px;
+    }
+    ul::-webkit-scrollbar-thumb:hover {
+      background: #333;
+    }
+    ul::-webkit-scrollbar-corner {
+      background: #179a16;
+    }
+  }
+}

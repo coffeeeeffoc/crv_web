@@ -1,0 +1,38 @@
+.autoHeight {
+  display: flex;
+  flex-direction: column;
+}
+.flexOverflowHidden {
+  flex: auto;
+  overflow: hidden;
+}
+.auto {
+  .autoHeight();
+  .flexOverflowHidden();
+}
+
+.scroll {
+  .ant-spin-nested-loading {
+    .auto();
+    &>.ant-spin-container {
+      .auto();
+      &>.ant-table {
+        .auto();
+        &>.ant-table-container {
+          .auto();
+          // border-left-width: 0;
+          &>.ant-table-header {
+            overflow: visible !important;
+          }
+          &>.ant-table-body {
+            flex: auto;
+            overflow-y: auto !important;
+          }
+          // table {
+          //   border-left: 1px solid #f0f0f0;
+          // }
+        }
+      }
+    }
+  }
+}

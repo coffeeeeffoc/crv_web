@@ -1,0 +1,41 @@
+{
+  "name": "@crv/rc",
+  "version": "1.0.0",
+  "license": "MIT",
+  "//exports": {
+    "./": "./dist/"
+  },
+  "dependencies": {
+    "@craco/craco": "^6.2.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "antd": "4.17.0-alpha.7",
+    "craco-less": "^1.18.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-resizable": "^3.0.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "typescript": "^4.1.2"
+  },
+  "scripts": {
+    "tsc:dev": "tsc -w --sourceMap",
+    "tsc": "tsc --build",
+    "//": "下方使用babel也可行，只不过为了生成d.ts文件，而改为使用tsc",
+    "//transform": "babel --extensions .ts --presets=@babel/preset-env,@babel/preset-react src -w -s -d dist --copy-files",
+    "transform:watch": "babel --extensions .ts,.tsx,.js,.jsx src -w -s -d dist --copy-files",
+    "transform": "babel --extensions .ts,.tsx,.js,.jsx src -d dist --copy-files",
+    "start": "yarn tsc:dev",
+    "build": "yarn tsc"
+  },
+  "devDependencies": {
+    "@types/react-resizable": "^1.7.3",
+    "cross-env": "^7.0.3"
+  }
+}

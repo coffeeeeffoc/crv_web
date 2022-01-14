@@ -1,0 +1,55 @@
+@import '@/styles/flex';
+
+.table {
+  :global {
+    ul.ant-pagination {
+      position: relative;
+      top: -31px;
+      margin: 0;
+      padding-right: 5px;
+    }
+
+    .ant-spin-nested-loading {
+      .auto();
+
+      &>.ant-spin-container {
+        .auto();
+
+        &>.ant-table {
+          .auto();
+
+          &>.ant-table-container {
+            .auto();
+
+            &>.ant-table-header {
+              .auto();
+              overflow: visible !important;
+            }
+
+            &>.ant-table-body {
+              flex: auto;
+              overflow-y: auto !important;
+            }
+          }
+        }
+      }
+    }
+
+    .ant-table {
+      max-height: calc(100vh - 140px) !important;
+
+      tr {
+        height: 30px;
+
+        th,
+        td {
+          height: 24px;
+
+          & {
+            padding: 0px 5px !important;
+          }
+        }
+      }
+    }
+  }
+}

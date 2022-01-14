@@ -1,0 +1,16 @@
+{
+  "extends":"../../tsconfig",
+  "compilerOptions": {
+    "experimentalDecorators": true, // 允许装饰器
+    "composite": true,
+    "downlevelIteration": true,
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@@/*": ["src/components/*"],
+      "@rc/*": ["../rc/src/*"],
+      "@utils/*": ["../utils/src/*"],
+      "@redux/*": ["src/redux/*"]
+    }
+  }
+}

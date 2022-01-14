@@ -1,0 +1,132 @@
+@import '@/styles/flex';
+
+.buttonStyle {
+  height: calc(100vh - 221px);
+  text-align: center;
+  padding: 20vh 0;
+  line-height: 8vh;
+  list-style: none;
+}
+
+.sourceTable {
+  :global {
+    .scroll();
+
+    .ant-empty-normal {
+      margin: calc((100vh - 303px) / 2) 0 !important;
+    }
+
+    .ant-table-tbody > tr.ant-table-row:hover > td {
+      background: #b7d9f5 !important;
+    }
+
+    .ant-table {
+      height: calc(100vh - 209px);
+
+      tr {
+        height: 20px;
+
+        th, td {
+          padding: 0 5px !important;
+        }
+      }
+    }
+  }
+}
+
+.table {
+  & > :global(.ant-spin-nested-loading>.ant-spin-container>.ant-table) {
+    height: calc(100vh - 209px);
+  }
+
+  :global {
+    .scroll();
+
+    .ant-empty-normal {
+      margin: calc((100vh - 303px) / 2) 0 !important;
+      border-bottom-width: 0;
+    }
+
+    .ant-table-tbody > tr.ant-table-row:hover > td {
+      background: #b7d9f5 !important;
+    }
+
+    .ant-table {
+      tr {
+        height: 20px;
+
+        th, td {
+
+          height: 20px;
+          padding: 0 5px !important;
+
+          & > div > .ant-table-wrapper {
+            & > .ant-spin-nested-loading {
+              margin-left: -5px;
+              margin-right: -5px;
+              border: 1px solid rgba(0, 0, 0, 0.25);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.targetList {
+  :global {
+    .ant-empty-normal {
+      margin: 5px 0 !important;
+    }
+
+    .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+      width: 0px !important;
+    }
+
+    .ant-table {
+      border-bottom: 0;
+
+      tr > td, th {
+        padding: 0px 5px !important;
+      }
+    }
+
+    .ant-table-container {
+      border-left-width: 0 !important;
+    }
+  }
+}
+
+.targetListUp {
+  :global {
+    .ant-empty-normal {
+      margin: 5px 0 !important;
+    }
+
+    .ant-table-thead > tr > th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+      width: 0px !important;
+    }
+
+    .ant-table {
+      border-bottom: 0;
+      max-height: 20px;
+
+      tr > td {
+        padding: 0px -5px !important;
+      }
+    }
+
+    .ant-table-container {
+      border-left-width: 0 !important;
+    }
+  }
+}
+
+
+.onRowClick {
+  background-color: #40a9ff;
+}
+
+.scroll {
+  height: calc(100vh - 220px);
+}

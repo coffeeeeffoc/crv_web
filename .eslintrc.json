@@ -1,0 +1,83 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "jest": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:react/recommended",
+    "standard-with-typescript"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "tsconfigRootDir": ".",
+    "project": [
+      "./packages/**/tsconfig.json"
+    ]
+  },
+  
+  "settings": {
+    "react": {
+      "createClass": "createReactClass", // Regex for Component Factory to use,
+                       // default to "createReactClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "fragment": "Fragment",  // Fragment to use (may be a property of <pragma>), default to "Fragment"
+      "version": "detect"// React version. "detect" automatically picks the version you have installed.
+                 // You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
+                 // default to latest and warns if missing
+                 // It will default to "detect" in the future 
+    }
+  },
+  "plugins": [
+    "react-hooks",
+    "autofix",
+    "react",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "react/jsx-uses-react": "off",
+    "react/no-children-prop": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/display-name": "off",
+    "no-use-before-define": 0,
+    "semi": ["error", "always"],
+    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "react/prop-types": 0,
+    // "comma-dangle": ["error", "always"],
+    "comma-dangle": ["error", {
+      "arrays": "only-multiline",
+      "objects": "only-multiline",
+      "imports": "only-multiline",
+      "exports": "only-multiline",
+      "functions": "only-multiline"
+    }],
+    "@typescript-eslint/member-delimiter-style": ["error", {
+      "multiline": {
+        "delimiter": "semi",
+        "requireLast": true
+      },
+      "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+      },
+      "multilineDetection": "brackets"
+    }],
+    "quotes": ["error", "single"],
+    // "trailing-comma": ["error", "always"],
+    // "trailing-comma": ["error", {"multiline": "always", "singleline": "never"}],
+    "react-hooks/rules-of-hooks": "error", // 检查 Hooks 的使用规则
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "@typescript-eslint/restrict-template-expressions": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/promise-function-async": "off",
+    "@typescript-eslint/no-dynamic-delete": "off",
+    "react-hooks/exhaustive-deps": "warn" // 检查依赖项的声明
+  }
+}

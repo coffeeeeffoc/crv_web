@@ -1,0 +1,8 @@
+# text=auto Git will handle the files in whatever way it thinks is best. This is a good default option.
+
+# text eol=crlf Git will always convert line endings to CRLF on checkout. You should use this for files that must keep CRLF endings, even on OSX or Linux.
+
+# text eol=lf Git will always convert line endings to LF on checkout. You should use this for files that must keep LF endings, even on Windows.
+
+# binary Git will understand that the files specified are not text, and it should not try to change them. The binary setting is also an alias for -text -diff.
+* text eol=lf

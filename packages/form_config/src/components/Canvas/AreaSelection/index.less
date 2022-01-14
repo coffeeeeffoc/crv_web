@@ -1,0 +1,28 @@
+@import '@@/Canvas/AreaButtons/index.less';
+
+.selectionWrapper {
+  pointer-events: none;
+  touch-action: none;
+  background: var(--color-white);
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid;
+  background: rgba(var(--color-white-rgb), 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &>:global(.button-container) {
+    pointer-events: initial;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    &>button {
+      .areaButton();
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "./tsconfig.extend.json",
+  "compilerOptions": {},
+  "include": [
+    "src",
+    "../rc/src",
+    "../utils/src",
+    "../../project.config.js"
+  ]
+}

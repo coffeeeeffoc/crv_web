@@ -1,0 +1,32 @@
+.crvResizable {
+  :global {
+    .react-resizable {
+      position       : relative;
+      background-clip: padding-box;
+    }
+    .ant-table>.ant-table-container>.ant-table-summary>table>tfoot>tr>td {
+      border-width: 0 !important;
+    }
+    .react-resizable-handle {
+      position: absolute;
+      right   : -5px;
+      bottom  : 0;
+      z-index : 1;
+      width   : 10px;
+      height  : 100%;
+      cursor  : col-resize;
+    }
+
+    /** 这里是偏移的时候显示的竖线，只有表头有竖线;
+    如果需要联通表格请自行修改高度，1000倍表头高度，然后超出表格隐藏什么的（自行研究） */
+    .react-resizable-handle.active::before {
+      content: '';
+      position: fixed;
+      left: 50%;
+      top: 0px;
+      bottom: 0;
+      height: 10000px !important;
+      border-left: dotted 3px #40a9ff;
+    }
+  }
+}

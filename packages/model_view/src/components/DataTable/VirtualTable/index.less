@@ -1,0 +1,47 @@
+.autoHeight {
+  display: flex;
+  flex-direction: column;
+}
+.flexOverflowHidden {
+  flex: auto;
+  overflow: hidden;
+}
+.auto {
+  .autoHeight();
+  .flexOverflowHidden();
+}
+.table {
+  .auto();
+      :global {
+        .ant-table {
+          .auto();
+          &>.ant-table-container {
+            .auto();
+            &>.ant-table-header {
+              flex: none;
+              // overflow-y: visible !important;
+            }
+            &>.ant-table-body {
+              flex: auto;
+              overflow-y: auto !important;
+            }
+          }
+        }
+        ul.ant-pagination {
+          position: relative;
+          top: -31px;
+          margin: 0;
+        }
+        .ant-table {
+          max-height: calc(100vh - 96px) !important;
+          tr {
+            height: 30px;
+            th,td {
+              &{
+                padding: 0px 5px !important;
+              }
+            }
+          }
+        }
+      }
+}

@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "rootDir": ".",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noFallthroughCasesInSwitch": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "declaration": true,
+    "baseUrl": ".",
+    "paths": {
+      "@rc/*": ["packages/rc/src/*"],
+      "@utils/*": ["../utils/src/*"],
+      "@form/*": ["../form/src/*"],
+      "@config/*": ["../config/src/*"],
+    },
+    // "baseUrl": "./packages",
+    // "paths": {
+    //   "@rc/*": ["rc/src/*"],
+    //   "@utils/*": ["utils/src/*"],
+    //   "@form/*": ["form/src/*"],
+    //   "@config/*": ["config/src/*"],
+    // },
+  },
+  "include": [
+    "packages"
+  ],
+}

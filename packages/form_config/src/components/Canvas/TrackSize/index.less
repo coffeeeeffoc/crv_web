@@ -1,0 +1,24 @@
+.editorTrackSize {
+  &:global(.col),
+  &:global(.row)
+  {
+    pointer-events: initial;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 13px;
+    color: var(--color-gray);
+    padding: 2px;
+    &.row {
+      padding-right: 4px;
+    }
+    user-select: none;
+    &.active {
+      color: var(--color-green);
+    }
+    &:focus {
+      color: black;
+    }
+    &.focused {
+      color: black;
+    }
+  }
+}

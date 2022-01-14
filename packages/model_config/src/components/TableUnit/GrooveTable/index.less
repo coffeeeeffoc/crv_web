@@ -1,0 +1,52 @@
+@import '@/styles/flex';
+
+.table {
+  :global {
+    .ant-spin-nested-loading {
+      .auto();
+
+      &>.ant-spin-container {
+        .auto();
+
+        &>.ant-table {
+          .auto();
+
+          &>.ant-table-container {
+            .auto();
+
+            &>.ant-table-header {
+              overflow: visible !important;
+            }
+
+            &>.ant-table-body {
+              flex: auto;
+              overflow-y: auto !important;
+            }
+          }
+        }
+      }
+    }
+
+    .ant-table {
+      // max-height: 50vh !important;
+
+      tr {
+        height: 20px;
+
+        th,
+        td {
+          height: 24px;
+
+          & {
+            padding: 0px 5px !important;
+          }
+        }
+      }
+    }
+
+    .ant-table-footer {
+      height: 24px;
+      padding: 0px !important;
+    }
+  }
+}

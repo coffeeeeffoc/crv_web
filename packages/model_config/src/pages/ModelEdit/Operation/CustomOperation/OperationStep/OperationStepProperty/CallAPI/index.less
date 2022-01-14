@@ -1,0 +1,146 @@
+@import '@/styles/flex';
+.changeForm {
+  margin-bottom: 0;
+  :global{
+    .ant-col{
+      .ant-radio-group{
+        width: 100%;
+        .operateType{
+          margin:10px 20px 20px 20px;
+          width:50%;
+        }
+        .outURL{
+          margin: 10px 20px 20px 20px;
+          &>.ant-form-item-control{
+            .ant-input-affix-wrapper{
+              padding: 0 0 0 5px;
+              .ant-input-suffix{
+                background-color: skyblue;
+                justify-content: center;
+                // width: 40px;
+                height: 22px;
+                line-height: 20px;
+                // font-size: 20px;
+                color: rgba(0,0,0,.5);
+              }
+            }
+            
+          }
+        }
+      }
+    }
+  }
+}
+
+.table {
+  :global {
+    .auto();
+    .ant-spin-nested-loading {
+      .auto();
+      &>.ant-spin-container {
+        .auto();
+        &>.ant-table {
+          .auto();
+          &>.ant-table-container {
+            .auto();
+            // border-left-width: 0;
+            &>.ant-table-header {
+              overflow: visible !important;
+            }
+            &>.ant-table-body {
+              flex: auto;
+              overflow-y: auto !important;
+            }
+            // table {
+            //   border-left: 1px solid #f0f0f0;
+            // }
+          }
+        }
+      }
+    }
+    .ant-table.ant-table-bordered > .ant-table-container > .ant-table-body > table > tbody > tr > td:last-child {
+      border-right: 0 !important;
+    }
+
+    .ant-empty-normal {
+      margin: calc((20vh - 105px)/2) 0 !important;
+      border-bottom: 0 !important;
+      // border-right: 0 !important;
+    }
+    .ant-table {
+      height: 20vh;
+      border-bottom: 1px solid #f0f0f0;
+      border-right: 1px solid #f0f0f0;
+      tr:not(.ant-table-measure-row) {
+        height: 20px;
+        th, td {
+          user-select: none;
+          height: 20px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          &:not(.editable) {
+            padding: 1px 5px !important;
+          }
+          &.editable {
+            &.editing {
+              padding: 0 !important;
+              .ant-form-item-control-input {
+              //   min-height: 26px !important;
+              //   line-height: 26px;
+                .ant-input {
+                  line-height: 20px !important;
+                  min-height: 18px !important;
+                  padding: 0px 2px !important;
+                }
+                .ant-select-multiple {
+                  .ant-select-selector {
+                    .ant-select-selection-item {
+                      padding-inline-start: 4px;
+                    }
+                    .ant-select-selection-search {
+                      left: 0 !important;
+                      margin-inline-start: 0px;
+                      height: 18px;
+                      line-height: 18px;
+                    }
+                  }
+                }
+                .ant-select-selector {
+                  padding: 0px 4px !important;
+                  height: unset;
+                  .ant-select-selection-search-input {
+                    height: unset;
+                  }
+                }
+              }
+            }
+            &:not(.editing) {
+              padding: 1px 5px !important;
+              .wholeCell {
+                width: 100%;
+                height: 80%;
+              }
+            }
+          }
+        }
+        &.ant-table-placeholder>td>.ant-empty {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
+// .editableRow{
+//   :global{
+//     .ant-table-cell{
+//       padding: 4px;
+//       height: 100%;
+//       width: 100%;
+//       .editable-cell-value-wrap{
+//         height: 30px;
+//         width: 100%;
+//       }
+//     }
+//   }
+// }

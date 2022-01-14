@@ -1,0 +1,12 @@
+.selectModel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &> div {
+    display: flex;
+    flex-direction: column;
+    &> :global(.ant-select) {
+      width: 200px;
+    }
+  }
+}

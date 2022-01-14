@@ -1,0 +1,28 @@
+@import '@rc/styles/basic/flex';
+
+.collapse {
+  // &:global(.ant-collapse > .ant-collapse-item > .ant-collapse-header) {
+  //   padding: 3px 5px;
+  // }
+}
+.searchable {
+  max-height: 300px;
+  :global {
+    .ant-collapse-content:not(.ant-collapse-content-hidden) {
+      .autoY();
+      .ant-collapse-content-box {
+        .autoY();
+      }
+    }
+  }
+}
+.searchableContainer {
+  .autoY();
+  &>.searchableContent {
+    .autoY();
+    &>.searchableContentInner {
+      flex: 1;
+      overflow: overlay;
+    }
+  }
+}

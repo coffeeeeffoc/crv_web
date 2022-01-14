@@ -1,0 +1,29 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# # git push命令执行前执行下面内容
+
+# # # 更新svn代码
+# # svn update
+
+# # 查找所有没被svn版本控制的文件，执行svn add
+# # 其中svn st等同于svn status
+# # | awk '{if ( $1 == "?") { print $2}}'是为了获取前面svn status的输出，去除?符号，只输出文件名进行转换
+# # | sed 's/\\/\\\\/g'是为了把路径名中的\符号转译为\\符号，因为后续xargs处理会忽略\符号，所以此处需要先转译
+# # | xargs是为了把多行数据转换为空格分隔的单行，作为后续svn add的参数
+# # svn add是为了将文件添加到版本控制中
+# addFiles="$(svn st | awk '{if ( $1 == "?") { print $2}}' | sed 's/\\/\\\\/g' | xargs)"
+# [ $addFiles ] && svn add $addFiles
+# # 上面这两句话与下方这句话基本一致，上面通过变量为了判断为空是不执行svn add命令
+# # svn st | awk '{if ( $1 == "?") { print $2}}' | sed 's/\\/\\\\/g' | xargs svn add
+
+# # 删除svn st中!感叹号部分的文件，表示本地删除而未从svn版本控制中删除的文件，针对这类文件，执行svn delete命令
+# deleteFiles="$(svn st | awk '{if ( $1 == "!") { print $2}}' | sed 's/\\/\\\\/g' | xargs)"
+# [ $deleteFiles ] && svn delete $deleteFiles
+# # svn st | awk '{if ( $1 == "!") { print $2}}' | sed 's/\\/\\\\/g' | xargs svn delete
+
+# # 最后一个commit的提交信息保存在msg变量中，下面sub函数截取删除了第一个内容（hash）
+# msg="$(git log --oneline -1 | awk '{sub(/[^ ]+ /,""); print $0}')"
+
+# # 提交代码，提交信息为msg的值
+# svn commit -m "$msg"

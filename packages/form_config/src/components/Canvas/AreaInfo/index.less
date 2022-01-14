@@ -1,0 +1,67 @@
+.areaInfo {
+  --margin: 2px;
+  // position: absolute;
+  // pointer-events: all;
+  top: 0;
+  left: 0;
+  // height: 100%;
+  width: 100%;
+  // height: calc(100% + var(--margin));
+  min-height: calc(100% + var(--margin));
+  width: calc(100% + var(--margin));
+  margin: -1px;
+  &:global(.isDropActive) {
+    background-color: var(--dropped-bg-color) !important;
+  }
+  &>:global(.area-info-controls) {
+    position: absolute;
+    top: 3px;
+    top: -34px;
+    left: 0px;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    &>.areaName {
+      pointer-events: initial;
+      font-size: 13px;
+      text-shadow: none;
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      direction: ltr;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      color: var(--color-white);
+      padding: 0 8px;
+      margin-right: 3px;
+      margin-bottom: 3px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: max-content;
+      min-width: 30px;
+      position: relative;
+      border-radius: 2px;
+      &:global(.implicit):after {
+        content: ' [auto]';
+        font-size: 12px;
+        opacity: 0.7;
+      }
+    
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(var(--color-white-rgb), 0.15);
+        pointer-events: none;
+        display: none;
+      }
+      &:hover:before {
+        display: block;
+      }
+    }
+  }
+}

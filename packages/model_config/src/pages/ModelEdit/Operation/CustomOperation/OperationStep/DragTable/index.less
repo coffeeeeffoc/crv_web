@@ -1,0 +1,49 @@
+@import '@/styles/flex';
+.table {
+  // .auto();
+  :global {
+    .ant-spin-nested-loading {
+    .auto();
+    &>.ant-spin-container {
+      .auto();
+      &>.ant-table {
+        .auto();
+        &>.ant-table-container {
+          .auto();
+          border-left-width: 0;
+          &>.ant-table-header {
+            overflow: visible !important;
+          }
+          &>.ant-table-body {
+            flex: auto;
+            overflow-y: auto !important;
+          }
+        }
+      }
+    }
+  }
+  .ant-empty-normal {
+    margin: 52px 0 !important;
+    // margin: calc((100vh - 535px)/2) 0 !important;
+    // border-bottom: 0 !important;
+  }
+    .ant-table {
+      // max-height: calc(100vh - 480px) !important;
+      // height: calc(100vh - 440px) !important;
+      // TODO: less的if判断剩余高度是否大于两百，大于的话用calc，小于的话高度写定
+      height: 200px !important;
+      tr {
+        height: 20px;
+        th,td {
+          &{
+            padding: 0px 5px !important;
+          }
+        }
+      }
+    }
+    .ant-table-footer {
+      height: 24px;
+      padding: 0px !important;
+    }
+  }
+}

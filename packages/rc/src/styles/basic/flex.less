@@ -1,0 +1,29 @@
+.autoHeight {
+  display: flex;
+  flex-direction: column;
+}
+.flexOverflowHidden {
+  flex: 1;
+  overflow: hidden;
+}
+.flexOverflowHiddenX {
+  flex: 1;
+  overflow-x: hidden;
+}
+.flexOverflowHiddenY {
+  flex: 1;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.auto {
+  .autoHeight();
+  .flexOverflowHidden();
+}
+.autoX {
+  .autoHeight();
+  .flexOverflowHiddenX();
+}
+.autoY {
+  .autoHeight();
+  .flexOverflowHiddenY();
+}

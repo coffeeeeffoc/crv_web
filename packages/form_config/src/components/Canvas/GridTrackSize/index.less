@@ -1,0 +1,15 @@
+.gridTrackSize {
+  touch-action: none;
+  pointer-events: none;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+  &:global(.col) {
+    align-items: flex-end;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,17 @@
+.hoverAnimation(@dash-width: 8px, @dash-thickness: 2px, @outline-color: hsla(1, 30%, 72%, 1), @outline-hover-color: red) {
+  outline: @dash-thickness dashed @outline-color;
+  outline-offset:-@dash-thickness;
+  transition: background .3s linear;
+  cursor: pointer;
+  &:hover {
+    outline: @dash-thickness solid transparent;
+    background: 
+        linear-gradient(90deg, @outline-hover-color 50%, transparent 0) repeat-x,
+        linear-gradient(90deg, @outline-hover-color 50%, transparent 0) repeat-x,
+        linear-gradient(0deg, @outline-hover-color 50%, transparent 0) repeat-y,
+        linear-gradient(0deg, @outline-hover-color 50%, transparent 0) repeat-y;
+    background-size: @dash-width @dash-thickness, @dash-width @dash-thickness, @dash-thickness @dash-width, @dash-thickness @dash-width;
+    background-position: 0 0, 0 100%, 0 0, 100% 0;
+    animation: linearGradientMove .3s infinite linear;
+  }
+}

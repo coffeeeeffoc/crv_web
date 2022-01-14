@@ -1,0 +1,84 @@
+.table {
+  :global {
+    .ant-empty-normal {
+      margin: 38px 0 !important;
+    }
+
+    .ant-table {
+      tr:not(.ant-table-measure-row) {
+        height: 28px;
+
+        th,
+        td {
+          user-select: none;
+          height: 22px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+
+          &.editable {
+            .wholeCell {
+              height: 100%;
+              // overflow: hidden;
+              // white-space: nowrap;
+              // text-overflow: ellipsis;
+            }
+
+            &.editing {
+              padding: 0 !important;
+
+              .ant-form-item-control-input {
+                .ant-select-multiple {
+                  .ant-select-selector {
+                    .ant-select-selection-item {
+                      padding-inline-start: 4px;
+                    }
+
+                    .ant-select-selection-search {
+                      left: 0 !important;
+                      // padding-left: 4px;
+                      margin-inline-start: 0px;
+                      height: 18px;
+                      line-height: 18px;
+                    }
+                  }
+                }
+
+                .ant-select-selector {
+                  padding: 0px !important;
+                  padding: 0px 4px !important;
+                  height: unset;
+
+                  .ant-select-selection-search-input {
+                    height: unset;
+                  }
+                }
+              }
+            }
+
+            &:not(.editing) {
+              // padding: 1px 5px !important;
+
+              .wholeCell {
+                width: 100% !important;
+                height: 100% !important;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                padding-top: 4px;
+              }
+            }
+
+            &.focusTrig {
+              padding: 0 !important
+            }
+          }
+        }
+
+        &.ant-table-placeholder>td>.ant-empty {
+          margin: 0;
+        }
+      }
+    }
+  }
+}
