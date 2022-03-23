@@ -201,6 +201,37 @@ export const setDescendantProp = (obj: any, desc: string, value: any, options?: 
   return hasInvalidPath ? [false, obj] : [true, (obj[arr[0]] = value)];
 };
 
+interface DeleteDescendantPropOptions {
+  separator?: string;
+  finalResult?: boolean;
+};
+
+export const deleteDescendantProp = (obj: any, desc: string, options: DeleteDescendantPropOptions) => {
+  const { separator = '.', finalResult = false } = options ?? {};
+  let result;
+  if (!obj) {
+    result = [false, null];
+  } else {
+    let hasInvalidPath = false;
+    const arr = desc.split(separator);
+    const lastKey = arr[arr.length - 1];
+    const prevArr = arr.slice(0, arr.length - 1);
+    while (prevArr.length) {
+      const key = prevArr.shift() as string;
+      if (!hasOwn(obj, key)) {
+        hasInvalidPath = true;
+        break;
+      }
+      obj = obj[key];
+    }
+    if (!obj) {
+      hasInvalidPath = true;
+    }
+    result = hasInvalidPath ? [false, null] : [true, delete obj[lastKey]];
+  }
+  return finalResult ? result[1] : result;
+};
+
 export const isFunctionStr = (str: string) => !!str.match(/\s*function\s*\([\s\S]*\)\s*\{([\s\S]*)\}|\s*\([\s\S]*\)\s*=>\s*[\s\S]*/);
 
 type MapType = string | string[] | {
